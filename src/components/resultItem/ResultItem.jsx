@@ -1,7 +1,7 @@
 import "./resultItem.scss";
 
 const ResultItem = ({ result, onClick }) => {
-  const { id, poster_path, name, overview, title } = result;
+  const { poster_path, name, overview } = result;
 
   return (
     <>

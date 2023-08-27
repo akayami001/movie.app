@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom"; // Import Link
 import "./topbar.scss";
-import logo from "../../utils/logo/logo.png";
 
 const Topbar = () => {
   const navigate = useNavigate();
