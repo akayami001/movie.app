@@ -1,0 +1,35 @@
+.home-page {
+  padding-top: 60px; /* To account for the fixed topbar's height */
+
+  .navigation {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 100;
+  }
+
+  .search-comp {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Add padding for spacing */
+    margin-top: 80px; /* Adjust this value for spacing between topbar and search component */
+
+    @media (max-width: 768px) {
+      margin-top: 140px; /* Increase margin for smaller screens */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navigation {
+      width: 100px; /* Adjust the width for better touch interactions on smaller screens */
+    }
+  }
+}

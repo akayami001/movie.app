@@ -1,0 +1,63 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding: 0 20px; /* Add some padding to the sides */
+}
+
+.login-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Make the form width 100% */
+  max-width: 400px; /* Add a maximum width to prevent it from becoming too wide */
+}
+
+.input {
+  margin-bottom: 10px;
+}
+
+.input input {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%; /* Make the button width 100% */
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.register-link {
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center; /* Center the register link */
+}
+
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+}
