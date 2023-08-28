@@ -6,27 +6,19 @@ import Search from "./pages/home/Home.jsx";
 import DetailPage from "./components/detailPage/DetailPage.jsx";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import PrivateRoutes from "./utils/PrivateRoutes.js";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    JSON.parse(localStorage.getItem("isLoggedIn"))
-  );
-
   return (
     <Router>
       <AuthWrapper>
         <Routes>
-          {isLoggedIn ? (
-            <Route>
-              <Route path="/home" element={<Search />} />
-              <Route path="/details/:resultId" element={<DetailPage />} />
-            </Route>
-          ) : (
-            <Route>
-              <Route path="/" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-            </Route>
-          )}
+          <Route element={<PrivateRoutes />}>
+            <Route path="/home" element={<Search />} />
+            <Route path="/details/:resultId" element={<DetailPage />} />
+          </Route>
+          <Route path="/" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </AuthWrapper>
     </Router>

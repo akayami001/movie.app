@@ -1,20 +1,20 @@
-.page {
+.login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   background-color: #f4f4f4;
-  padding: 0 20px; /* Add some padding to the sides */
+  padding: 0 20px;
 }
 
 .login-form {
   background-color: #fff;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Make the form width 100% */
-  max-width: 400px; /* Add a maximum width to prevent it from becoming too wide */
+  width: 100%;
+  max-width: 400px;
 }
 
 .input {
@@ -30,23 +30,24 @@
   box-sizing: border-box;
 }
 
-.button {
+.login-button {
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 3px;
   padding: 10px 20px;
   cursor: pointer;
-  width: 100%; /* Make the button width 100% */
+  width: 100%;
+  transition: background-color 0.3s;
 }
 
-.button:disabled {
+.login-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.error {
-  color: #d9534f;
+.error-message {
+  color: crimson;
   font-size: 14px;
   margin-top: 10px;
 }
@@ -54,10 +55,10 @@
 .register-link {
   font-size: 14px;
   margin-top: 10px;
-  text-align: center; /* Center the register link */
-}
+  text-align: center;
 
-.register-link a {
-  color: #007bff;
-  text-decoration: none;
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
 }

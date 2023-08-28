@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import ResultItem from "../resultItem/ResultItem.jsx";
+import { img_200, unavailable } from "../config.js";
 import "./searchComponent.scss";
 
 const SearchComponent = () => {
@@ -17,8 +18,8 @@ const SearchComponent = () => {
         const response = await axios.get(
           `https://api.themoviedb.org/3/search/multi?query=${searchText}&api_key=90666bfac25a6d35ad77ed582ce6d683`
         );
-        console.log(response.data.results);
         setContent(response.data.results);
+        console.log(response.data.results);
       }
     } catch (error) {
       console.error(error);
@@ -72,7 +73,7 @@ const SearchComponent = () => {
                   // Check if poster_path is available before using it
                   posterUrl={
                     result.poster_path
-                      ? `https://image.tmdb.org/t/p/w200${result.poster_path}`
+                      ? `https://image.tmdb.org/t/p/{result.poster_path}`
                       : ""
                   }
                 />

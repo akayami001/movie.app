@@ -1,14 +1,19 @@
+import { unavailable } from "../config";
 import "./resultItem.scss";
 
 const ResultItem = ({ result, onClick }) => {
   const { poster_path, name, overview } = result;
-
+  console.log(result);
   return (
     <>
       <li className="card-item" onClick={onClick}>
         <img
           className="card-image"
-          src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w300/${poster_path}`
+              : unavailable
+          }
           alt={name}
         />
         <div className="card-content">

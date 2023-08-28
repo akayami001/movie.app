@@ -47,7 +47,7 @@ const Login = () => {
   const isLoginDisabled = !(formData.email && formData.password.length > 6);
 
   return (
-    <div className="page">
+    <div className="login-container">
       <div className="navigation">
         <Topbar />
       </div>
@@ -61,7 +61,6 @@ const Login = () => {
               placeholder="Email"
               value={formData.email}
               onChange={(e) => setFormData({ email: e.target.value })}
-              onKeyPress={handleKeyPress}
               ref={emailInputRef}
             />
           </div>
@@ -71,23 +70,27 @@ const Login = () => {
               type="password"
               placeholder="Password"
               value={formData.password}
+              onKeyPress={handleKeyPress}
               onChange={(e) => setFormData({ password: e.target.value })}
             />
           </div>
           <button
-            className="button"
+            className="login-button"
             onClick={doLogin}
             disabled={isLoginDisabled}
           >
             Login
           </button>
           {errorMessage ? (
-            <p className="error">
+            <p className="error-message">
               Invalid email or password. Please try again.
             </p>
           ) : null}
           <p className="register-link">
-            Not a user? <Link to="/register">Register here</Link>
+            Not a user?{" "}
+            <Link to="/" exact>
+              Register here
+            </Link>
           </p>
         </div>
       </div>
